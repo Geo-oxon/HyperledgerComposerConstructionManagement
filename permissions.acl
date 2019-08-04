@@ -1,0 +1,259 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Sample access control list.
+ */
+rule SupplierSeeUpdateHisOrderOnly {
+  description: "Supplier can see and update their own record only"
+    participant(p): "org.example.basic.Supplier"
+    operation: READ, UPDATE
+    resource(r): "org.example.basic.Order"
+    condition: (p.getIdentifier() != r.supplier.getIdentifier())
+    action: DENY
+}
+
+rule EverybodyCanReadEverything {
+    description: "Allow all participants read access to all resources"
+    participant: "org.example.basic.*"
+    operation: READ, UPDATE
+    resource: "org.example.basic.*"
+    action: ALLOW
+}
+
+//**************************Commercial Manager Access Rights***************************//
+rule CommercialManagerEnableCreateOrder {
+    description: "Allow Commercial Manager to submit CreateOrder transactions"
+    participant: "org.example.basic.CommercialManager"
+    operation: CREATE
+    resource: "org.example.basic.CreateOrder"
+    action: ALLOW
+}
+
+rule CommercialManagerEnableOrder {
+    description: "Allow Commercial Manager to create a new Order"
+    participant: "org.example.basic.CommercialManager"
+    operation: CREATE
+    resource: "org.example.basic.Order"
+    action: ALLOW
+}
+
+rule CommercialManagerEnableBuy {
+    description: "Allow Commercial Manager to submit Buy transactions"
+    participant: "org.example.basic.CommercialManager"
+    operation: CREATE
+    resource: "org.example.basic.Buy"
+    action: ALLOW
+}
+
+rule CommercialManagerEnableMakePayment {
+    description: "Allow Commercial Manager to submit MakePayment transactions"
+    participant: "org.example.basic.CommercialManager"
+    operation: CREATE
+    resource: "org.example.basic.MakePayment"
+    action: ALLOW
+}
+//************************End Commercial Manager Access Rights**************************//
+
+//**************************Supplier Access Rights***************************//
+rule SupplierRequestShipping {
+    description: "Allow Commercial Manager to submit RequestShipping transactions"
+    participant: "org.example.basic.Supplier"
+    operation: CREATE
+    resource: "org.example.basic.RequestShipping"
+    action: ALLOW
+}
+
+rule SupplierRequestPayment {
+    description: "Allow Commercial Manager to submit RequestPayment transactions"
+    participant: "org.example.basic.Supplier"
+    operation: CREATE
+    resource: "org.example.basic.RequestPayment"
+    action: ALLOW
+}
+
+rule SupplierEnableRefund {
+    description: "Allow Commercial Manager to submit Refund transactions"
+    participant: "org.example.basic.Supplier"
+    operation: CREATE
+    resource: "org.example.basic.Refund"
+    action: ALLOW
+}
+//************************End Supplier Access Rights**************************//
+
+//**************************Shipper Access Rights***************************//
+rule ShipperEnableDelivering {
+    description: "Allow Commercial Manager to submit Delivering transactions"
+    participant: "org.example.basic.Shipper"
+    operation: CREATE
+    resource: "org.example.basic.Delivering"
+    action: ALLOW
+}
+
+rule ShipperEnableDeliver {
+    description: "Allow Commercial Manager to submit Deliver transactions"
+    participant: "org.example.basic.Shipper"
+    operation: CREATE
+    resource: "org.example.basic.Deliver"
+    action: ALLOW
+}
+//************************End Shipper Access Rights**************************//
+
+//**************************SiteForeMan Access Rights***************************//
+rule SiteForeManEnableDeliverConfirmation {
+    description: "Allow Commercial Manager to submit DeliverConfirmation transactions"
+    participant: "org.example.basic.SiteForeMan"
+    operation: CREATE
+    resource: "org.example.basic.DeliverConfirmation"
+    action: ALLOW
+}
+
+rule SiteForeManEnableTestAndInstallationConfirmation {
+    description: "Allow Commercial Manager to submit TestAndInstallationConfirmation transactions"
+    participant: "org.example.basic.SiteForeMan"
+    operation: CREATE
+    resource: "org.example.basic.TestAndInstallationConfirmation"
+    action: ALLOW
+}
+
+rule SiteForeManEnableRequestRefund {
+    description: "Allow Commercial Manager to submit RequestRefund transactions"
+    participant: "org.example.basic.SiteForeMan"
+    operation: CREATE
+    resource: "org.example.basic.RequestRefund"
+    action: ALLOW
+}
+
+rule SiteForeManEnableRequestShippingBackOrder {
+    description: "Allow Commercial Manager to submit RequestShippingBackOrder transactions"
+    participant: "org.example.basic.SiteForeMan"
+    operation: CREATE
+    resource: "org.example.basic.RequestShippingBackOrder"
+    action: ALLOW
+}
+
+rule SiteForeManEnableOrderCompleted {
+    description: "Allow Commercial Manager to submit OrderCompleted transactions"
+    participant: "org.example.basic.SiteForeMan"
+    operation: CREATE
+    resource: "org.example.basic.OrderCompleted"
+    action: ALLOW
+}
+//************************End SiteForeMan Access Rights**************************//
+
+//**************************Installer Access Rights***************************//
+rule InstallerManEnableTestPassed {
+    description: "Allow Commercial Manager to submit TestPassed transactions"
+    participant: "org.example.basic.Installer"
+    operation: CREATE
+    resource: "org.example.basic.TestPassed"
+    action: ALLOW
+}
+
+rule InstallerManEnableTestFailed {
+    description: "Allow Commercial Manager to submit TestFailed transactions"
+    participant: "org.example.basic.Installer"
+    operation: CREATE
+    resource: "org.example.basic.TestFailed"
+    action: ALLOW
+}
+//************************End Installer Access Rights**************************//
+
+//**************************ClerkOfWork Access Rights***************************//
+rule InstallerManEnableInstalled {
+    description: "Allow Commercial Manager to submit Installed transactions"
+    participant: "org.example.basic.ClerkOfWork"
+    operation: CREATE
+    resource: "org.example.basic.Installed"
+    action: ALLOW
+}
+
+rule InstallerManEnableNotInstalled {
+    description: "Allow Commercial Manager to submit NotInstalled transactions"
+    participant: "org.example.basic.ClerkOfWork"
+    operation: CREATE
+    resource: "org.example.basic.NotInstalled"
+    action: ALLOW
+}
+//************************End ClerkOfWork Access Rights**************************//
+
+//************************Historian Record Access**************************//
+rule SupplierSeeOwnHistoryOnly {
+  description: "Supplier should be able to see history of their own transactions"
+    participant(p):"org.example.basic.Supplier"
+    operation: READ
+    resource(v): "org.hyperledger.composer.system.HistorianRecord"
+    condition: (v.participantInvoking.getIdentifier() != p.getIdentifier())
+    action: DENY
+}
+
+rule ShipperSeeOwnHistoryOnly {
+  description: "Shipper should be able to see history of their own transactions"
+    participant(p):"org.example.basic.Shipper"
+    operation: READ
+    resource(v): "org.hyperledger.composer.system.HistorianRecord"
+    condition: (v.participantInvoking.getIdentifier() != p.getIdentifier())
+    action: DENY
+}
+
+rule InstallerSeeOwnHistoryOnly {
+  description: "Shipper should be able to see history of their own transactions"
+    participant(p):"org.example.basic.Installer"
+    operation: READ
+    resource(v): "org.hyperledger.composer.system.HistorianRecord"
+    condition: (v.participantInvoking.getIdentifier() != p.getIdentifier())
+    action: DENY
+}
+
+rule ClerkOfWorkSeeOwnHistoryOnly {
+  description: "Shipper should be able to see history of their own transactions"
+    participant(p):"org.example.basic.ClerkOfWork"
+    operation: READ
+    resource(v): "org.hyperledger.composer.system.HistorianRecord"
+    condition: (v.participantInvoking.getIdentifier() != p.getIdentifier())
+    action: DENY
+}
+//************************End Historian Record Access**************************//
+rule OwnerHasFullAccessToTheirAssets {
+    description: "Allow all participants full access to their assets"
+    participant(p): "org.example.basic.*"
+    operation: ALL
+    resource(r): "org.example.basic.*"
+    condition: (r.owner.getIdentifier() === p.getIdentifier())
+    action: ALLOW
+}
+
+rule SystemACL {
+    description: "System ACL to permit all access"
+    participant: "org.hyperledger.composer.system.Participant"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
