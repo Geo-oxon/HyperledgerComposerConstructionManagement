@@ -1,0 +1,187 @@
+CM: http://localhost:3000/api/CommercialManager
+{
+  "$class": "org.example.basic.CommercialManager",
+  "commercialManagerID": "TungAnh",
+  "companyName": "VietNam"
+}
+
+Supplier: http://localhost:3000/api/Supplier
+{
+  "$class": "org.example.basic.Supplier",
+  "supplierID": "Long",
+  "companyName": "Chemistry"
+}
+
+SiteForeMan: http://localhost:3000/api/SiteForeMan
+{
+  "$class": "org.example.basic.SiteForeMan",
+  "siteForeManID": "My",
+  "companyName": "Biology"
+}
+
+Shipper: http://localhost:3000/api/Shipper
+{
+  "$class": "org.example.basic.Shipper",
+  "shipperID": "Thanh",
+  "companyName": "Chemistry"
+}
+
+Installer: http://localhost:3000/api/Installer
+{
+  "$class": "org.example.basic.Installer",
+  "installerID": "Chi",
+  "companyName": "Korea"
+}
+
+ClerkOfWork: http://localhost:3000/api/ClerkOfWork
+{
+  "$class": "org.example.basic.ClerkOfWork",
+  "clerkOfWorkID": "Hang",
+  "companyName": "Biology"
+}
+
+Order: http://localhost:3000/api/Order
+{
+  "$class": "org.example.basic.Order",
+  "orderNumber": "Order1",
+  "items": [],
+  "status": "string",
+  "createdDate": "string",
+  "boughtDate": "string",
+  "buyerBankAccount": "string",
+  "supplierBankAccount": "string",
+  "paymentTransactionNumber": "string",
+  "refundTransactionNumber": "string",
+  "ShippingCompanyName": "string",
+  "testResult": "string",
+  "testComment": "string",
+  "installationResult": "string",
+  "installationComment": "string",
+  "supplier": "Long",
+  "commercialManager": "TungAnh",
+  "shipper": "Thanh",
+  "siteForeMan": "My",
+  "installer": "Chi",
+  "clerkOfWork": "Hang"
+}
+
+CreateOrder: http://localhost:3000/api/CreateOrder
+{
+  "$class": "org.example.basic.CreateOrder",
+  "amount": 0,
+  "commercialManager": "TungAnh",
+  "supplier": "Long",
+  "order": "Order1"
+}
+
+Buy: http://localhost:3000/api/Buy
+{
+  "$class": "org.example.basic.Buy",
+  "order": "Order1",
+  "supplier": "Long",
+  "commercialManager": "TungAnh"
+}
+
+RequestShipping: http://localhost:3000/api/RequestShipping
+{
+  "$class": "org.example.basic.RequestShipping",
+  "ShippingCompanyName": "VietDelivery",
+  "order": "Order1",
+  "supplier": "Long",
+  "siteForeMan": "My"
+}
+
+Delivering: http://localhost:3000/api/Delivering
+{
+  "$class": "org.example.basic.Delivering",
+  "order": "Order1",
+  "shipper": "Thanh"
+}
+
+Deliver: http://localhost:3000/api/Deliver
+{
+  "$class": "org.example.basic.Deliver",
+  "order": "Order1",
+  "shipper": "Thanh"
+}
+
+DeliverConfirmation: http://localhost:3000/api/DeliverConfirmation
+{
+  "$class": "org.example.basic.DeliverConfirmation",
+  "order": "Order1",
+  "siteForeMan": "My"
+}
+
+MakePayment: http://localhost:3000/api/MakePayment
+{
+  "$class": "org.example.basic.MakePayment",
+  "buyerBankAccount": "VietinBank#123456",
+  "paymentTransactionNumber": "123",
+  "order": "Order1",
+  "supplier": "Long",
+  "commercialManager": "TungAnh"
+}
+
+TestPassed: http://localhost:3000/api/TestPassed
+{
+  "$class": "org.example.basic.TestPassed",
+  "order": "Order1",
+  "installer": "Chi"
+}
+
+TestFailed: http://localhost:3000/api/TestFailed
+{
+  "$class": "org.example.basic.TestFailed",
+  "testComment": "Size not match",
+  "order": "Order2",
+  "installer": "Chi"
+}
+
+Installed: http://localhost:3000/api/Installed
+{
+  "$class": "org.example.basic.Installed",
+  "installationComment": "string",
+  "order": "Order1",
+  "clerkOfWork": "Hang"
+}
+
+NotInstalled: http://localhost:3000/api/NotInstalled
+{
+  "$class": "org.example.basic.NotInstalled",
+  "installationComment": "string",
+  "order": "Order2",
+  "clerkOfWork": "Hang"
+}
+
+TestAndInstallConfirmation: http://localhost:3000/api/TestAndInstallationConfirmation
+{
+  "$class": "org.example.basic.TestAndInstallationConfirmation",
+  "order": "Order1"
+}
+
+RequestRefund: http://localhost:3000/api/RequestRefund
+{
+  "$class": "org.example.basic.RequestRefund",
+  "order": "Order2"
+}
+
+RequestShippingBackOrder: http://localhost:3000/api/RequestShippingBackOrder
+{
+  "$class": "org.example.basic.RequestShippingBackOrder",
+  "order": "Order2",
+  "supplier": "Long",
+  "siteForeMan": "My"
+}
+
+Refund: http://localhost:3000/api/Refund
+{
+  "$class": "org.example.basic.Refund",
+  "refundTransactionNumber": "Vietinbank#12345678",
+  "order": "Order2"
+}
+
+OrderCompleted: http://localhost:3000/api/OrderCompleted
+{
+  "$class": "org.example.basic.OrderCompleted",
+  "order": "Order1"
+}

@@ -1,0 +1,12 @@
+neu trong truong hop muon chay lai rest-api-server bang cau lenh: composer-rest-server. 
+
+1. Vao trong fabric-dev-server
+./startFabric
+
+2. Vao trong folder chua rest-server chay lai cac cau lenh sau:
+
+2.1.
+composer network install --card PeerAdmin@hlfv1 --archiveFile  hyperledger-construction-management@0.0.1.bna
+
+2.2.
+composer network start --networkName hyperledger-construction-management --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
