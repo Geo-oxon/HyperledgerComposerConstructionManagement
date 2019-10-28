@@ -187,7 +187,7 @@ npm install
 ##### 7. Go to a web browser and open localhost/50000:
 ![5000-localhost](images/5000-localhost.PNG)
 
-![brought up web service](images/brought up web service.PNG)
+![brought-up-web-service](images/brought-up-web-service.PNG)
 
 ##### 8. Test operation of blockchain and web by creating a commercial manager:
 
