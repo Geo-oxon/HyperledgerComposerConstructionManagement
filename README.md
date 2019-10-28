@@ -139,3 +139,18 @@ cd fabric-dev-servers
 #### 4. test imported card by using ping
 ![ping-command](images/ping-command.PNG)
 
+#### 5. start rest composer server. 
+
+In the /hyperledger-construction-management directory use following command to start hyperledger composer server:
+
+composer-rest-server
+
+![never-use-name-space](images/never-use-name-space.PNG)
+
+Choose options for composer based on information in the following image:
+
+admin card: admin@hyperledger-construction-management
+
+![options-conposer-rest-server](images/options-conposer-rest-server.PNG)
+
+
