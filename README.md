@@ -122,4 +122,5 @@ cd fabric-dev-servers
 
 ./startFabric.sh
 
-![bring-up-hyperledger-fabric](images/bring-up-hyperledger-fabric.png)
+![bring-up-hyperledger-fabric](images/bring-up-hyperledger-fabric.PNG)
+
