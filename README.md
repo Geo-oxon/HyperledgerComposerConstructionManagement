@@ -124,3 +124,18 @@ cd fabric-dev-servers
 
 ![bring-up-hyperledger-fabric](images/bring-up-hyperledger-fabric.PNG)
 
+#### 4. go to the hyperledger-construction-management file and type following commands for bringing up hyperledger composer. All commands could be found in the /hyperledger-construction-management/commands
+![commands](images/commands.PNG)
+
+##### 1. install business network
+![installed-1st-command](images/installed-1st-command.PNG)
+
+##### 2. start business network
+![installed-2nd-command](images/installed-2nd-command/PNG)
+
+#### 3. import card for using composer
+![installing-3rd-command](images/installing-3rd-command.PNG)
+
+#### 4. test imported card by using ping
+![ping-command](images/ping-command.PNG)
+
