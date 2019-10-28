@@ -94,10 +94,10 @@ sudo apt-get install -y nodejs
 
 ### II. Testing your Nodejs and NPM installation
 
-> node -v
+node -v
 v10.16.0 (this line depends on your version)
 
-> npm -v
+npm -v
 6.9.0 (this line depends on your version)
 
 ### III. Install development dependencies
