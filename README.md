@@ -69,6 +69,20 @@ cd ~/fabric-dev-servers
 export FABRIC_VERSION=hlfv11
 ./downloadFabric.sh
 
+### III. Controlling your dev environment
+
+The first time you start up a new runtime, you'll need to run the start script, then generate a PeerAdmin card:
+
+cd ~/fabric-dev-servers
+
+export FABRIC_VERSION=hlfv11
+
+./startFabric.sh
+
+./createPeerAdminCard.sh
+
+
+
 
 
 
