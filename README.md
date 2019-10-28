@@ -81,6 +81,27 @@ export FABRIC_VERSION=hlfv11
 
 ./createPeerAdminCard.sh
 
+## Install Node Express for web development
+
+### I. Install node
+The easiest way to install the most recent LTS version of Node 10.x is to use the package manager to get it from the Ubuntu binary distributions repository. This can be done very simply by running the following two commands on your terminal:
+
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - 
+
+sudo apt-get install -y nodejs
+
+- Warning: Don't install directly from the normal Ubuntu repositories because they contain very old versions of node.
+
+### II. Testing your Nodejs and NPM installation
+
+> node -v
+v10.16.0 (this line depends on your version)
+
+> npm -v
+6.9.0 (this line depends on your version)
+
+### III. Install development dependencies
+
 
 
 
