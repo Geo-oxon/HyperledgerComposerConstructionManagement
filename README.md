@@ -131,7 +131,7 @@ cd fabric-dev-servers
 ![installed-1st-command](images/installed-1st-command.PNG)
 
 ##### 2. start business network
-![installed-2nd-command](images/installed-2nd-command/PNG)
+![installed-2nd-command](images/installed-2nd-command.PNG)
 
 #### 3. import card for using composer
 ![installing-3rd-command](images/installing-3rd-command.PNG)
