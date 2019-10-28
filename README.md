@@ -102,7 +102,7 @@ v10.16.0 (this line depends on your version)
 
 ### III. Install development dependencies
 
-
+npm install eslint --save-dev
 
 
 
