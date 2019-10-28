@@ -114,4 +114,4 @@ npm install eslint --save-dev
 ![hyperledger-construction-management](images/hyperledger-construction-management.png)
 
 #### 2. put downloaded file in your home directory in your local machine:
-![hyperledger-construction-management-local-machine] (images/hyperledger-construction-management-local-machine.png)
+![hyperledger-construction-management-local-machine](images/hyperledger-construction-management-local-machine.PNG)
