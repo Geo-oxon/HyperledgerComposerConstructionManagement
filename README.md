@@ -115,3 +115,11 @@ npm install eslint --save-dev
 
 #### 2. put downloaded file in your home directory in your local machine:
 ![hyperledger-construction-management-local-machine](images/hyperledger-construction-management-local-machine.PNG)
+
+#### 3. go to the Fabric server development to bring up hyperledger fabric:
+
+cd fabric-dev-servers
+
+./startFabric.sh
+
+![bring-up-hyperledger-fabric](images/bring-up-hyperledger-fabric.png)
