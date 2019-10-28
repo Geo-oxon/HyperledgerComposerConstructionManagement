@@ -111,6 +111,6 @@ npm install eslint --save-dev
 ### I. Download hyperledger-construction-management file from github to your local machine:
 
 
-![alt text](http://url/to/img.png)
+![alt text](images/hyperledger-construction-management.png)
 
 
