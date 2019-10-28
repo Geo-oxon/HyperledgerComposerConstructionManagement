@@ -161,4 +161,6 @@ Go to localhost/3000/explorer
 
 ![3000-explorer](images/3000-explorer.PNG)
 
+![API-composer-interface](images/API-composer-interface.PNG)
+
 
