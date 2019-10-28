@@ -163,4 +163,46 @@ Go to localhost/3000/explorer
 
 ![API-composer-interface](images/API-composer-interface.PNG)
 
+#### 5. Bring up web services:
 
+##### 1. Download the zip file from github 
+![blockchain-construction-management-zip](images/blockchain-construction-management-zip.PNG)
+
+##### 2. Create a folder for your node project. For example, study-node in home directory
+![study-node](images/study-node.PNG)
+
+##### 3. Unzip the blockchain-construction-management.zip inside your created foler in the former step (study-node folder)
+![blockchain-construction-management-file](images/blockchain-construction-management-file.PNG)
+
+##### 4. Go to /study-node/blockchain-construction-management and type following command:
+
+npm install
+
+##### 5. Find the content in the /blockchain-construction-management/project-infor for starting command of web:
+![project-infor](images/project-infor.PNG)
+
+##### 6. Open a new terminal and use command in project-infor to start web:
+![start-web-services](images/start-web-services.PNG)
+
+##### 7. Go to a web browser and open localhost/50000:
+![5000-localhost](images/5000-localhost.PNG)
+
+![brought up web service](images/brought up web service.PNG)
+
+##### 8. Test operation of blockchain and web by creating a commercial manager:
+
+Go to form to create a commercial manager, input information and submit to hyperledger blockchain:
+
+![create-commercial-manager](images/create-commercial-manager.PNG)
+
+Go to commercial manager list to check commercial manager:
+
+![commercial-manager-list](images/commercial-manager-list.PNG)
+
+Go to Hyperledger Composer to check whether or not information of commercial manager is created
+
+![composer-commercial-manager](images/composer-commercial-manager.PNG)
+
+![try-it-out](images/try-it-out.png)
+
+![result-update](images/result-update.png)
