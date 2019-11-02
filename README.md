@@ -127,7 +127,7 @@ cd fabric-dev-servers
 #### 4. go to the hyperledger-construction-management file and type following commands for bringing up hyperledger composer. All commands could be found in the /hyperledger-construction-management/commands
 ![commands](images/commands.PNG)
 
-##### 1. install business network
+##### 1. install business network (go to the /hyperledger-construction-management directory)
 ![installed-1st-command](images/installed-1st-command.PNG)
 
 ##### 2. start business network
