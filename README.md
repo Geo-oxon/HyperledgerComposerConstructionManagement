@@ -163,7 +163,7 @@ Go to localhost/3000/explorer
 
 ![API-composer-interface](images/API-composer-interface.PNG)
 
-#### 5. Bring up web services:
+#### 6. Bring up web services:
 
 ##### 1. Download the zip file from github 
 ![blockchain-construction-management-zip](images/blockchain-construction-management-zip.PNG)
